@@ -1,0 +1,173 @@
+/* auth.css - Enhanced for floating labels and password toggle */
+
+/* General Auth Container */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f8f9fa;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Auth Card (Login & Signup) */
+.auth-card {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  position: relative;
+}
+
+/* Headings */
+.auth-card h2.auth-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #6c5ce7;
+  margin-bottom: 25px;
+}
+
+/* Floating Label Fields */
+.auth-field {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s;
+  box-sizing: border-box;
+}
+
+.auth-input:focus {
+  border-color: #6c5ce7;
+}
+
+.auth-input:focus + .auth-label,
+.auth-input:not(:placeholder-shown) + .auth-label {
+  top: -10px;
+  left: 12px;
+  font-size: 12px;
+  background: #fff;
+  padding: 0 5px;
+  color: #6c5ce7;
+}
+
+.auth-label {
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  font-size: 14px;
+  color: #333;
+  font-weight: 600;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Password Toggle */
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+}
+
+/* Error Messages */
+.auth-error {
+  background: #ffe6e6;
+  color: #d8000c;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.error-message {
+  display: block;
+  color: #d8000c;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+/* Extra links like forgot password */
+.auth-extra {
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+.forgot-link {
+  color: #6c5ce7;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.auth-btn {
+  width: 100%;
+  padding: 12px;
+  background: #6c5ce7;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 10px;
+}
+
+.auth-btn:hover {
+  background: #5a4bcc;
+}
+
+.auth-btn:disabled {
+  background: #a39ff3;
+  cursor: not-allowed;
+}
+
+/* Footer Text (Signup/Login Links) */
+.auth-footer {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
+
+.auth-footer .auth-link {
+  color: #6c5ce7;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-footer .auth-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+  .auth-card {
+    padding: 30px 20px;
+  }
+
+  .auth-card h2.auth-title {
+    font-size: 24px;
+  }
+}

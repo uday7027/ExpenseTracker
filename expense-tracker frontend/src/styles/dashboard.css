@@ -1,0 +1,105 @@
+/* Main Dashboard Content Wrapper */
+.dashboard-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Dashboard Content Area */
+.dashboard-content {
+  flex: 1;
+  margin-left: 240px; /* Default sidebar width */
+  padding: 90px 2rem 2rem;
+  background-color: #f9fafb;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Adjust margin when sidebar is collapsed */
+.sidebar.collapsed ~ .dashboard-content {
+  margin-left: 60px;
+}
+
+/* Grid layout for form and list side by side */
+.content-grid {
+  display: grid;
+  grid-template-columns: 400px 1fr; /* fixed form, flexible list */
+  gap: 130px;
+  align-items: start;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Assign grid areas */
+.expense-form {
+  grid-column: 1;
+  width: 100%;
+}
+
+.expense-list {
+  grid-column: 2;
+  width: 100%;
+  min-width: 0; /* allows proper shrinking on smaller screens */
+}
+
+/* Responsive adjustments */
+
+/* Medium screens */
+@media (max-width: 1200px) {
+  .content-grid {
+    grid-template-columns: 350px 1fr;
+    gap: 25px;
+  }
+}
+
+/* Tablet screens */
+@media (max-width: 1024px) {
+  .dashboard-content {
+    margin-left: 240px;
+    padding: 90px 1.5rem 1.5rem;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .expense-form,
+  .expense-list {
+    grid-column: 1;
+    width: 100%;
+  }
+
+  .sidebar.collapsed ~ .dashboard-content {
+    margin-left: 60px;
+  }
+}
+
+/* Small tablets / large phones */
+@media (max-width: 768px) {
+  .dashboard-content {
+    margin-left: 0;
+    padding: 80px 1rem 1rem;
+  }
+
+  .sidebar.collapsed ~ .dashboard-content {
+    margin-left: 0;
+  }
+
+  .content-grid {
+    gap: 15px;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
+  .dashboard-content {
+    padding: 75px 0.8rem 0.8rem;
+  }
+
+  .content-grid {
+    gap: 10px;
+  }
+}
